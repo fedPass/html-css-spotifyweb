@@ -6,6 +6,17 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+    text-transform: uppercase;
 }
 
 .clearfix::after {
@@ -31,23 +42,16 @@ header {
     left: 0;
     color: #fff;
     padding: 15px;
-    font-size: 14px;
 }
 
 header a {
-    color: #fff;
-    text-decoration: none;
     display: block;
     margin: 8px auto;
 }
 
-header a:hover {
+header a:hover:not(#logo),
+main a:hover {
     font-weight: bold;
-}
-
-#menu-played ul {
-    list-style: none;
-    text-transform: uppercase;
 }
 
 .header-top > div {
@@ -59,7 +63,6 @@ header a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
 }
 
 #logo {
@@ -91,16 +94,16 @@ header i {
     padding-top: 8px;
 }
 
-#menu-icon a:nth-child(2) {
-    border-left: 3px solid #178a3c;
-    padding-left: 3px;
+#menu-icon a:nth-child(2)::before {
+    content: "";
+    width: 3px;
+    height: 16px;
+    background-color: #178a3c;
 }
 
 [class$="-label"] {
     display: none;
 }
-
-/* menu-label mi serve per mettere poi le scritte del menu hidden in versione mobile*/
 
 /*-----main----*/
 
@@ -111,6 +114,34 @@ main {
     height: 100vh;
     float: right;
 }
+
+.small-main-nav {
+    padding-top: 15px;
+}
+
+.big-main-nav {
+    padding-top: 30px;
+    display: none;
+    width:
+}
+
+.big-main-nav li {
+    display: inline-block;
+    padding: 0 10px;
+    font-size: 12px;
+}
+
+.big-main-nav li:first-child {
+    font-weight: bold;
+}
+
+.big-main-nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+
+
 
 /*-----footer----*/
 
@@ -137,10 +168,28 @@ footer {
     }
 }
 
+@media screen and (min-width: 768px) {
+
+
+}
+
+@media screen and (min-width: 992px) {
+
+
+}
+
 @media screen and (min-width: 1200px) {
 
-    main.container {
-        max-width: 60%;
+    .big-main-nav {
+        display: block;
+    }
+
+    .small-main-nav {
+        display: none;
+    }
+
+    main .container {
+        max-width: 70%;
         margin: 0 auto;
     }
 }

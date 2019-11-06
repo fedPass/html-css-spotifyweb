@@ -4,31 +4,96 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .clearfix::after {
     clear: both;
     display: table;
     content: "";
 }
 
+.container {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/*-----header----*/
+
 header {
     background: rgb(76,66,65);
     background: linear-gradient(346deg, rgba(76,66,65,1) 58%, rgba(126,114,114,1) 100%);
-    width: 300px;
+    width: 200px;
     height: calc(100% - 80px);
     position: fixed;
     top: 0;
     left: 0;
+    color: #fff;
+    padding: 15px;
+    font-size: 14px;
 }
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+#menu-played ul {
+    list-style: none;
+}
+
+.header-top > div {
+    margin-bottom: 20px;
+}
+
+.header-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#logo {
+    height: 32px;
+    line-height: 32px;
+}
+
+#logo i {
+    margin-right: 5px;
+}
+
+#logo small {
+    font-size: 7px;
+    position: relative;
+    top: -4px;
+    left: 3px;
+}
+
+#logo span {
+    font-size: 20px;
+}
+
+header i {
+    margin-right: 15px;
+}
+
+#menu-played ul
+
+/* menu-label mi serve per mettere poi le scritte del menu hidden in versione mobile*/
+
+/*-----main----*/
 
 main {
     background: rgb(155,130,129);
     background: linear-gradient(139deg, rgba(155,130,129,1) 31%, rgba(83,72,71,1) 94%);
-    width: calc(100% - 300px);
+    width: calc(100% - 200px);
     height: 100vh;
     float: right;
 }
 
-
+/*-----footer----*/
 
 footer {
     background-color: #6e7273;
@@ -36,4 +101,12 @@ footer {
     height: 80px;
     position: fixed;
     bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+
+    main.container {
+        max-width: 60%;
+        margin: 0 auto;
+    }
 }

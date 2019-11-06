@@ -24,7 +24,7 @@ body {
 header {
     background: rgb(76,66,65);
     background: linear-gradient(346deg, rgba(76,66,65,1) 58%, rgba(126,114,114,1) 100%);
-    width: 200px;
+    width: 80px;
     height: calc(100% - 80px);
     position: fixed;
     top: 0;
@@ -38,14 +38,20 @@ header a {
     color: #fff;
     text-decoration: none;
     display: block;
+    margin: 8px auto;
+}
+
+header a:hover {
+    font-weight: bold;
 }
 
 #menu-played ul {
     list-style: none;
+    text-transform: uppercase;
 }
 
 .header-top > div {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .header-container {
@@ -53,6 +59,7 @@ header a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
@@ -79,7 +86,19 @@ header i {
     margin-right: 15px;
 }
 
-#menu-played ul
+#account {
+    border-top: 1px solid #fff;
+    padding-top: 8px;
+}
+
+#menu-icon a:nth-child(2) {
+    border-left: 3px solid #178a3c;
+    padding-left: 3px;
+}
+
+[class$="-label"] {
+    display: none;
+}
 
 /* menu-label mi serve per mettere poi le scritte del menu hidden in versione mobile*/
 
@@ -88,7 +107,7 @@ header i {
 main {
     background: rgb(155,130,129);
     background: linear-gradient(139deg, rgba(155,130,129,1) 31%, rgba(83,72,71,1) 94%);
-    width: calc(100% - 200px);
+    width: calc(100% - 80px);
     height: 100vh;
     float: right;
 }
@@ -101,6 +120,21 @@ footer {
     height: 80px;
     position: fixed;
     bottom: 0;
+}
+
+@media screen and (min-width: 576px) {
+
+    header {
+        width: 200px;
+    }
+
+    main {
+        width: calc(100% - 200px);
+    }
+
+    [class$="-label"] {
+        display: inline-block;
+    }
 }
 
 @media screen and (min-width: 1200px) {

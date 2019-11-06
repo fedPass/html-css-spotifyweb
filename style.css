@@ -180,6 +180,15 @@ main .row {
 .card {
     margin: 15px;
     max-width: 200px;
+    position: relative;
+}
+
+.card i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
 }
 
 .card img {
@@ -188,6 +197,10 @@ main .row {
 
 .card:hover {
     opacity: 0.6;
+}
+
+.card i:hover {
+    visibility: visible;
 }
 
 /*agg un icona per play song display none che in hover si mostra*/
@@ -210,6 +223,11 @@ footer {
 
 footer i {
     margin: 0 10px;
+}
+
+.far.fa-heart:hover {
+    color: #db1a3e;
+    font-weight: bold;
 }
 
 footer .song-preview img {
@@ -236,34 +254,22 @@ footer .song-preview img {
 }
 
 #progress-bar-song::before {
-    content: "";
-    display: inline-block;
     width: 150px;
-    height: 2px;
     background-color: #178a3c;
 }
 
  #progress-bar-song::after {
-     content: "";
-     display: inline-block;
      width: 200px;
-     height: 2px;
      background-color: #b8bfba;
  }
 
  #progress-bar-volume::before {
-     content: "";
-     display: inline-block;
      width: 30px;
-     height: 2px;
      background-color: #b8bfba;
  }
 
   #progress-bar-volume::after {
-      content: "";
-      display: inline-block;
       width: 30px;
-      height: 2px;
       background-color: #7e827f;
   }
 
@@ -271,13 +277,18 @@ footer .song-preview img {
   #progress-bar-song::after,
   #progress-bar-volume::before,
   #progress-bar-volume::after {
+      content: "";
+      display: inline-block;
       position: relative;
+      height: 2px;
       bottom: 5px;
   }
 
   .time-progress,
-  .fas.fa-bars,
-  .fas.fa-desktop {
+  .fas.fa-desktop,
+  .far.fa-heart,
+  .fas.fa-random,
+  #progress-bar-volume {
       display: none;
   }
 
@@ -296,13 +307,19 @@ footer .song-preview img {
     [class$="label"] {
         display: inline-block;
     }
+
+    .far.fa-heart,
+    .fas.fa-random {
+        display: inline-block;
+    }
 }
 
 @media screen and (min-width: 850px) {
 
     .time-progress,
     .fas.fa-bars,
-    .fas.fa-desktop {
+    .fas.fa-desktop,
+    #progress-bar-volume {
         display: inline-block;
     }
 

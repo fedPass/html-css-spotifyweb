@@ -175,7 +175,6 @@ main .row {
 }
 
 .card-container {
-    /* max-width: 915px; perchè se no vanno accapo brutte*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -185,8 +184,16 @@ main .row {
     margin: 15px;
     flex-basis: 150px;
     position: relative;
-    flex-grow: 1;
     text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.card:hover {
+    opacity: 0.6;
 }
 
 .card i {
@@ -198,21 +205,9 @@ main .row {
     visibility: hidden;
 }
 
-.card img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-}
-
-.card:hover {
-    opacity: 0.6;
-}
-
 .card:hover i {
     visibility: visible;
 }
-
 
 /*-----footer----*/
 
@@ -344,7 +339,6 @@ footer .song-preview img {
     #progress-bar-volume {
         display: inline-block;
     }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -352,8 +346,6 @@ footer .song-preview img {
     .song-preview p {
         display: inline-block;
     }
-
-
 }
 
 @media screen and (min-width: 1200px) {

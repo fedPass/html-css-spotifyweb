@@ -67,10 +67,6 @@ header a {
     font-weight: normal;
 }
 
-header i {
-    margin-right: 15px;
-}
-
 .header-top > div {
     margin-bottom: 30px;
 }
@@ -80,7 +76,7 @@ header i {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: ;
+    text-align: center;
 }
 
 #logo {
@@ -108,13 +104,18 @@ header i {
     padding-top: 8px;
 }
 
+#menu-icon a:nth-child(2) {
+    position: relative;
+}
+
 #menu-icon a:nth-child(2)::before {
     content: "";
     display: inline-block;
-    position: relative;
-    right: 15px;
+    position: absolute;
+    bottom: -3px;
+    left: -15px;
     width: 3px;
-    height: 16px;
+    height: 25px;
     background-color: #178a3c;
 }
 
@@ -150,14 +151,15 @@ main {
 
 .big-main-nav li:first-child {
     font-weight: bold;
+    position: relative;
 }
 
 .big-main-nav li:first-child::after {
     content: "";
     display: inline-block;
-    position: relative;
-    right: 52px;
-    top: 12px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
     width: 30px;
     height: 2px;
     background-color: #178a3c;
@@ -173,6 +175,7 @@ main .row {
 }
 
 .card-container {
+    /* max-width: 915px; perchè se no vanno accapo brutte*/
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -180,17 +183,19 @@ main .row {
 
 .card {
     margin: 15px;
-    max-width: 200px;
+    flex-basis: 150px;
     position: relative;
+    flex-grow: 1;
+    text-align: center;
 }
 
 .card i {
     position: absolute;
     top: 50%;
     left: 50%;
+    bottom: 10px;
     transform: translate(-50%,-50%);
     visibility: hidden;
-    z-index: 10;
 }
 
 .card img {
@@ -204,11 +209,9 @@ main .row {
     opacity: 0.6;
 }
 
-.card i:hover {
+.card:hover i {
     visibility: visible;
 }
-
-/*agg un icona per play song display none che in hover si mostra*/
 
 
 /*-----footer----*/
@@ -256,6 +259,11 @@ footer .song-preview img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+#progress-bar-song i,
+#progress-bar-volume i {
+    margin: 0;
 }
 
 #progress-bar-song::before {
@@ -311,6 +319,15 @@ footer .song-preview img {
 
     [class$="label"] {
         display: inline-block;
+        margin-left: 15px;
+    }
+
+    #menu-icon a:nth-child(2)::before {
+        height: 30px;
+    }
+
+    .header-container {
+        text-align: left;
     }
 
     .far.fa-heart,

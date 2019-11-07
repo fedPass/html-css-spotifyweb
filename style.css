@@ -128,7 +128,7 @@ header a {
 main {
     background: rgb(155,130,129);
     background: linear-gradient(139deg, rgba(155,130,129,1) 31%, rgba(83,72,71,1) 94%);
-    width: calc(100% - 80px);
+    width: calc(100vw - 80px);
     padding-bottom: 100px;
     float: right;
 }
@@ -309,7 +309,8 @@ footer .song-preview img {
     }
 
     main {
-        width: calc(100% - 200px);
+        width: calc(100vw - 200px);
+        height: 100vH;
     }
 
     [class$="label"] {

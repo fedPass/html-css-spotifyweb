@@ -80,6 +80,7 @@ header i {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: ;
 }
 
 #logo {
@@ -189,10 +190,14 @@ main .row {
     left: 50%;
     transform: translate(-50%,-50%);
     visibility: hidden;
+    z-index: 10;
 }
 
 .card img {
-    width: 100%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .card:hover {
